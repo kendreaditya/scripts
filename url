@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 URL FILENAME"
+  exit 1
+fi
+
+# Get URL and file name from command line arguments
+url=$1
+filename=$2
+
+# Create .url file with provided URL and filename
+echo "[InternetShortcut]" > "$filename.url"
+echo "URL=$url" >> "$filename.url"
+
+echo "URL file created at $(pwd)/$filename.url"
+
